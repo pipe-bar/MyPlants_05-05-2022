@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-align_absolute-center boton">
+        <lightning-input type="text" label="Ingresa Criterio de busqueda" style="width: 1075px;" onchange={handleInputChange}></lightning-input>
+    </div>
+    <div class="slds-align_absolute-center">
+        <div class="slds-grid slds-wrap slds-grid_align-spread grid" style="width: 1100px;">
+            <template if:true = {species.data}>
+                <template for:each={species.data} for:item="specie">
+                    <div key={specie.Id}>
+                        <c-species-tile specie = {specie} class="slds-col slds-var-m-around_small">
+                        </c-species-tile>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+
+</template>
